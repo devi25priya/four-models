@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ML Project Hub</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="brand"><span class="brand-icon">ML</span> ML Project Hub</div>
+  <nav>
+    <a onclick="showHome()">Home</a>
+    <a onclick="showAbout()">About</a>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="page active">
+    <div class="hero">
+      <span class="eyebrow">MACHINE LEARNING APPLICATIONS</span>
+      <h1>Real-World <span>ML Projects</span></h1>
+      <p>Four different machine-learning applications in one interactive website.</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card weather" onclick="openProject('weather')">
+        <div class="project-icon">🌦️</div>
+        <span>PROJECT 01 · REGRESSION</span>
+        <h2>Weather Prediction</h2>
+        <p>Predict temperature from humidity, pressure, wind speed and previous temperature.</p>
+        <button>Open Project →</button>
+      </article>
+
+      <article class="project-card salary" onclick="openProject('salary')">
+        <div class="project-icon">💰</div>
+        <span>PROJECT 02 · REGRESSION</span>
+        <h2>Salary Prediction</h2>
+        <p>Estimate annual salary using experience, education, job level and age.</p>
+        <button>Open Project →</button>
+      </article>
+
+      <article class="project-card house" onclick="openProject('house')">
+        <div class="project-icon">🏠</div>
+        <span>PROJECT 03 · REGRESSION</span>
+        <h2>House Price Prediction</h2>
+        <p>Estimate property prices from area, bedrooms, bathrooms, age and location score.</p>
+        <button>Open Project →</button>
+      </article>
+
+      <article class="project-card student" onclick="openProject('student')">
+        <div class="project-icon">🎓</div>
+        <span>PROJECT 04 · CLUSTERING</span>
+        <h2>Student Segmentation</h2>
+        <p>Group students into performance categories using unsupervised learning.</p>
+        <button>Open Project →</button>
+      </article>
+    </div>
+
+    <div class="stats">
+      <div><b>4</b><span>Projects</span></div>
+      <div><b>4</b><span>Algorithms</span></div>
+      <div><b>R</b><span>Backend</span></div>
+      <div><b>API</b><span>Live Models</span></div>
+    </div>
+  </section>
+
+  <section id="project" class="page">
+    <button class="back" onclick="showHome()">← All Projects</button>
+    <div class="project-head">
+      <div>
+        <span id="pType"></span>
+        <h1 id="pTitle"></h1>
+        <p id="pDescription"></p>
+      </div>
+      <div id="pIcon" class="large-icon"></div>
+    </div>
+
+    <div class="project-layout">
+      <div class="panel">
+        <h2>Enter Input Data</h2>
+        <p class="muted" id="pInstruction"></p>
+        <div id="formArea"></div>
+        <button class="predict-btn" onclick="predict()">Run Prediction →</button>
+      </div>
+
+      <div class="panel output">
+        <small>MODEL OUTPUT</small>
+        <div id="outIcon" class="out-icon">⌁</div>
+        <h2 id="outTitle">Ready</h2>
+        <p id="outText">Enter your values and run the model.</p>
+        <strong id="outValue">—</strong>
+      </div>
+    </div>
+
+    <div class="panel explanation">
+      <h2>How this model works</h2>
+      <p id="pExplanation"></p>
+      <div class="model-info">
+        <div><span>Algorithm</span><b id="pAlgorithm"></b></div>
+        <div><span>Learning Type</span><b id="pLearning"></b></div>
+        <div><span>Output</span><b id="pOutput"></b></div>
+      </div>
+    </div>
+
+    <div class="panel chart-panel">
+      <h2>Project Visualization</h2>
+      <canvas id="projectChart"></canvas>
+    </div>
+  </section>
+
+  <section id="about" class="page">
+    <button class="back" onclick="showHome()">← Home</button>
+    <div class="about panel">
+      <span class="eyebrow">ABOUT THE PROJECT</span>
+      <h1>ML Project Hub</h1>
+      <p>This college project demonstrates how different machine-learning algorithms can solve different real-world problems through one web application.</p>
+      <div class="about-grid">
+        <div><h3>🌦️ Weather</h3><p>Linear Regression predicts temperature.</p></div>
+        <div><h3>💰 Salary</h3><p>Random Forest predicts annual salary.</p></div>
+        <div><h3>🏠 House</h3><p>Decision Tree predicts property price.</p></div>
+        <div><h3>🎓 Students</h3><p>K-Means groups students by performance.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>ML Project Hub · R + Plumber + HTML + CSS + JavaScript</footer>
+<script src="script.js"></script>
+</body>
+</html>

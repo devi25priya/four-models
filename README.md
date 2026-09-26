@@ -62,6 +62,6 @@ python -m http.server 5500
 
 Open:
 
-http://localhost:5500/frontend/
+http://127.0.0.1:5500/frontend/index.html
 
 IMPORTANT: `source("model.R")` is an R command and must be run inside R/RStudio, not directly in PowerShell.
